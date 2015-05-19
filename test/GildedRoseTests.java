@@ -26,9 +26,9 @@ public class GildedRoseTests {
     
     @Before
     public void setUp() {
-        items = new Item[] {new Item("Aged Brie", 40, 10), 
-            new Item("Sulfuras, Hand of Ragnaros", 40, 10), 
-            new Item("Backstage passes to a TAFKAL80ETC concert", 40, 10)};
+        items = new Item[] {new Item(GildedRose.AGED_BRIE, 40, 10), 
+            new Item(GildedRose.SULFURAS, 40, 10), 
+            new Item(GildedRose.BACKSTAGE, 40, 10)};
     }
     
     private void setItemParams(int itemNum, int quality, int sellIn){
