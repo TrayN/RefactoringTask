@@ -1,16 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import com.gildedrose.Item;
 import com.gildedrose.GildedRose;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -21,8 +11,7 @@ import org.junit.Before;
  */
 public class GildedRoseTests {
     
-    Item items[];
-    int iterationCount = 2;
+    private Item items[];
     
     @Before
     public void setUp() {
@@ -48,18 +37,6 @@ public class GildedRoseTests {
         assertEquals(items[itemNum].getQuality(),quality);
         assertEquals(items[itemNum].getSellIn(),sellIn);
     }
-    
-    /*@Test
-    public void iterationOne(){
-        GildedRose gR = new GildedRose(items);        
-        for(int i=0;i<iterationCount;i++){
-            gR.updateQuality();
-        }
-        for(int i=0;i<items.length;i++){
-            System.out.println(items[i].getName()+" : "+items[i].getQuality()+" : "+items[i].getSellIn());
-        }
-        //gR.getItems();
-    }*/
     
     /*
     quality      <0;0<50;>50
