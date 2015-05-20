@@ -28,26 +28,23 @@ public class GildedRose {
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             if(items[i].name.equals(GildedRose.SULFURAS)){break;}
-            
+            items[i].sellIn -= 1;
             switch (items[i].name) {
                 case GildedRose.AGED_BRIE:  
-                    items[i].sellIn -= 1;
                     items[i].quality +=1;
                     if(items[i].sellIn<0)
                         items[i].quality +=1;
                     break;
                 case GildedRose.BACKSTAGE: 
                     items[i].quality +=1;
-                    if(items[i].sellIn<11)
+                    if(items[i].sellIn<10)
                         items[i].quality +=1;
-                    if(items[i].sellIn<6)
+                    if(items[i].sellIn<5)
                         items[i].quality +=1;
-                    items[i].sellIn -= 1;
                     if(items[i].sellIn<0)
                         items[i].quality =0;
                     break;
                 default:
-                    items[i].sellIn -= 1;
                     items[i].quality -=1;
                     if(items[i].sellIn<0)
                         items[i].quality -=1;
