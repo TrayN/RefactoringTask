@@ -38,7 +38,7 @@ public class GildedRoseTests {
     
     @Test
     public void agedTest(){
-        for(int j=0;j<60;j++){
+        for(int j=-20;j<60;j++){
             aged = new Item(GildedRose.AGED_BRIE, j/2, j);
             gR = new GildedRose(new Item[] {aged});
             int testQuality = aged.quality;
@@ -61,7 +61,7 @@ public class GildedRoseTests {
     
     @Test
     public void backstageTest(){
-        for(int j=0;j<60;j++){
+        for(int j=-20;j<60;j++){
             backstage = new Item(GildedRose.BACKSTAGE, j/2, j);
             gR = new GildedRose(new Item[] {backstage});
             int testQuality = backstage.quality;
@@ -90,7 +90,7 @@ public class GildedRoseTests {
     
     @Test
     public void radnomRoseTest(){
-        for(int j=0;j<60;j++){
+        for(int j=-20;j<60;j++){
             randomRose = new Item("Random Rose", j/2, j);
             gR = new GildedRose(new Item[] {randomRose});
             int testQuality = randomRose.quality;
@@ -108,8 +108,5 @@ public class GildedRoseTests {
             }
         }
     }
-    
-    
-    
-    
+  
 }
