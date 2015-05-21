@@ -108,5 +108,26 @@ public class GildedRoseTests {
             }
         }
     }
+    
+    @Test 
+    public void randomConjuredRoseTest(){
+        for(int j=-20;j<60;j++){
+            randomRose = new Item("Random Conjured Rose", j/2, j);
+            gR = new GildedRose(new Item[] {randomRose});
+            int testQuality = randomRose.quality;
+            for(int i = 0; i<iterationCount; i++){
+                gR.updateQuality();
+                assertTrue(randomRose.quality>=0);
+                assertTrue(randomRose.quality<=50);
+                if(randomRose.quality>0){
+                        testQuality-=2;
+                    if(randomRose.sellIn<0){
+                        testQuality-=2;
+                    } 
+                    assertEquals(testQuality,randomRose.quality);
+                }
+            }
+        }
+    }
   
 }

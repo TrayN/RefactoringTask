@@ -10,6 +10,7 @@ public class GildedRose {
     public static final String AGED_BRIE = "Aged Brie";
     public static final String BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
     public static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
+    public static final String CONJURED = "Conjured";
     
     Item[] items;
 
@@ -26,14 +27,16 @@ public class GildedRose {
     }
 
     public void updateQuality() {
-        for (int i = 0, multiplier = 1; i < items.length; i++) {
+        for (int i = 0, value = 1, multiplier = 1; i < items.length; i++) {
             if(items[i].name.equals(GildedRose.SULFURAS)){break;}
             items[i].sellIn -= 1;
+            value = 1;
             multiplier = 1;
-            if(items[i].sellIn<0) multiplier = 2;
+            if(items[i].sellIn<0) value = 2;
+            if(items[i].name.contains(GildedRose.CONJURED)) multiplier = 2;
             switch (items[i].name) {
                 case GildedRose.AGED_BRIE:  
-                    items[i].quality +=multiplier;
+                    items[i].quality +=value;
                     break;
                 case GildedRose.BACKSTAGE: 
                     items[i].quality +=1;
@@ -45,7 +48,7 @@ public class GildedRose {
                         items[i].quality =0;
                     break;
                 default:
-                    items[i].quality -=multiplier;
+                    items[i].quality -=value*multiplier;
                     break; 
             }
             if(items[i].quality<0) items[i].quality=0;
